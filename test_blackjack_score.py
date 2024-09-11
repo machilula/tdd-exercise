@@ -1,24 +1,45 @@
 from main import blackjack_score
 import pytest
 
-#@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_score_for_pair_of_number_cards():
   # Arrange
   hand = [3, 4]
+  result = 7
 
   # Act
   score = blackjack_score(hand)
 
   # Assert <-- Write assert statement here
+  assert score == result
   
 
 @pytest.mark.skip(reason="no way of currently testing this")
 def test_facecards_have_values_calculated_correctly():
   pass
 
-@pytest.mark.skip(reason="no way of currently testing this")
+  # check that function is doing addition
+  # make sure face cards equal to value
+  # face cards are being added correctly 
+  # assert expected results
+
+
+
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_calculates_aces_as_11_where_it_does_not_go_over_21():
-  pass
+  
+  # check the sum of score from hand
+  # if score >= 10 ace is 1
+  # else score < 10 it is 11
+
+  hand = [3, ]
+  score = blackjack_score(hand)
+
+
+  result = score
+
+  assert result == 17
+
 
 
 @pytest.mark.skip(reason="no way of currently testing this")
