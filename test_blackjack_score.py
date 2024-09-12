@@ -16,7 +16,7 @@ def test_score_for_pair_of_number_cards():
 
 @pytest.mark.skip(reason="no way of currently testing this")
 def test_facecards_have_values_calculated_correctly():
-  pass
+  hand = []
 
   # check that function is doing addition
   # make sure face cards equal to value
@@ -27,24 +27,17 @@ def test_facecards_have_values_calculated_correctly():
 
 # @pytest.mark.skip(reason="no way of currently testing this")
 def test_calculates_aces_as_11_where_it_does_not_go_over_21():
-  
-  # check the sum of score from hand
-  # if score >= 10 ace is 1
-  # else score < 10 it is 11
-
-  hand = [3, ]
+  hand = [3, 4, "Ace"]
   score = blackjack_score(hand)
-
-
-  result = score
-
-  assert result == 17
+  assert score == 18
 
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_calculates_aces_as_1_where_11_would_bust():
-  pass
+  hand = [6, 8, "Ace"]
+  score = blackjack_score(hand)
+  assert score == 15
 
 @pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_invalid_for_invalid_cards():
@@ -59,10 +52,14 @@ def test_returns_invalid_for_list_length_greater_than_5():
 def test_returns_bust_for_scores_over_21():
   pass
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_12_for_ace_ace_king():
-  pass
+    hand = ["Ace", "Ace", "King"]
+    score = blackjack_score(hand)
+    assert score == 12
 
-@pytest.mark.skip(reason="logic not yet implemented")
+# @pytest.mark.skip(reason="logic not yet implemented")
 def test_returns_14_for_ace_ace_ace_ace():
-    pass
+    hand = ["Ace", "Ace", "Ace", "Ace"]
+    score = blackjack_score(hand)
+    assert score == 14
